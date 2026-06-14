@@ -1,0 +1,117 @@
+/* Centramos el acordeón en la pantalla */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Tarjeta contenedora principal */
+.acordeon-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Título */
+h1 {
+  color: #0f172a;
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Cada bloque de pregunta-respuesta */
+.acordeon-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden; /* Evita que el texto de la respuesta se desborde al estar cerrado */
+  transition: all 0.3s ease;
+}
+
+/* Cuando el ítem está abierto, le damos un borde destacado y una sutil sombra */
+.acordeon-item.activo {
+  border-color: #0284c7;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.05);
+}
+
+/* Botón del encabezado (La Pregunta) */
+.acordeon-header {
+  width: 100%;
+  background-color: #ffffff;
+  color: #334155;
+  border: none;
+  padding: 18px 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Hover sobre la pregunta */
+.acordeon-header:hover {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Pequeño indicador visual (+ / -) usando pseudo-elementos */
+.acordeon-header::after {
+  content: "+";
+  font-size: 1.3rem;
+  color: #64748b;
+  transition: transform 0.3s ease;
+}
+
+/* Si el ítem está activo, cambiamos el color del texto del botón y giramos el indicador */
+.acordeon-item.activo .acordeon-header {
+  color: #0284c7;
+  background-color: #f0f9ff; /* Un fondo azul muy tenue */
+}
+
+.acordeon-item.activo .acordeon-header::after {
+  content: "−"; /* Cambia a símbolo de menos */
+  color: #0284c7;
+}
+
+/* --- CONTENIDO DE LA RESPUESTA --- */
+
+/* Estado inicial: completamente oculto usando max-height */
+.acordeon-content {
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.2s ease;
+  background-color: #ffffff;
+}
+
+/* Estilo del texto interno */
+.acordeon-content p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 20px 18px 20px; /* Padding solo abajo y a los costados para que no afecte el cierre */
+}
+
+/* LA CLASE MÁGICA: Cuando el padre es .activo, desplegamos el contenido */
+.acordeon-item.activo .acordeon-content {
+  max-height: 200px; /* Un tamaño máximo estimado para que se despliegue suavemente */
+  opacity: 1;
+}

@@ -1,0 +1,124 @@
+/* Centramos la tarjeta principal en la pantalla */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 1. Tarjeta visible que contiene el botón "Ver más" */
+.card-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  max-width: 350px;
+}
+
+.card-container h2 {
+  color: #1e293b;
+  margin-top: 0;
+}
+
+.card-container p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Estilo para los botones */
+button {
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+button:hover {
+  background-color: #0369a1;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* 2. EL MODAL: Capa oscura de fondo que cubre toda la pantalla */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Color negro con 50% de transparencia */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* ESTADO INICIAL: Escondido y transparente */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 3. La ventana blanca flotante que contiene la info ampliada */
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  /* Animación para que la cajita suba un poco al aparecer */
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-content h2 {
+  color: #0f172a;
+  margin-top: 0;
+}
+
+.modal-content p {
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Botón específico para cerrar dentro del modal */
+#btn-cerrar {
+  background-color: #ef4444; /* Rojo para indicar cierre o cancelar */
+}
+#btn-cerrar:hover {
+  background-color: #dc2626;
+}
+
+/* 4. LA CLASE MÁGICA: Controlada por tu JavaScript */
+.modal-overlay.visible {
+  display: flex; /* Cambia de 'none' a 'flex' para centrar la caja blanca */
+  opacity: 1; /* Se vuelve totalmente visible */
+}
+
+.modal-overlay.visible .modal-content {
+  transform: translateY(
+    0
+  ); /* La cajita blanca vuelve a su posición original flotando suavemente */
+}

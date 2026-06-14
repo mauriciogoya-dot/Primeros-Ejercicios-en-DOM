@@ -1,0 +1,142 @@
+CSS
+/* Estilo general y centrado del contenedor */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f5f9;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.kanban-container {
+  width: 100%;
+  max-width: 900px;
+}
+
+h1 {
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Grupo de entrada superior */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+#nueva-tarea {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+#nueva-tarea:focus {
+  border-color: #0284c7;
+}
+
+#btn-agregar-tarea {
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#btn-agregar-tarea:hover {
+  background-color: #0369a1;
+}
+
+/* --- ESTRUCTURA DEL TABLERO KANBAN --- */
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 20px;
+}
+
+/* Estilo individual de cada columna */
+.columna {
+  background-color: #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.columna h2 {
+  font-size: 1.1rem;
+  color: #334155;
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* El área interna donde caen las tareas */
+.zona-drop {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 10px;
+  border: 2px dashed transparent;
+  transition: all 0.2s ease;
+}
+
+/* Efecto visual cuando arrastramos una tarea sobre la columna (lo activaremos con JS) */
+.zona-drop.hover {
+  background-color: rgba(2, 132, 199, 0.1);
+  border-color: #0284c7;
+}
+
+/* --- CARDS DE LAS TAREAS --- */
+.tarea-card {
+  background-color: #ffffff;
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(15, 23, 42, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab; /* Cambia el cursor a una manito agarrando */
+  font-weight: 500;
+  color: #1e293b;
+  border-left: 4px solid #64748b;
+}
+
+/* Cuando se está arrastrando la tarjeta */
+.tarea-card.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+/* Botón de eliminar dentro de la tarjeta */
+.btn-eliminar-tarea {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.btn-eliminar-tarea:hover {
+  background-color: #fee2e2;
+}

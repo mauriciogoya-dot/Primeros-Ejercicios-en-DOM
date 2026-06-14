@@ -1,0 +1,120 @@
+/* Centramos el formulario en la pantalla */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Tarjeta contenedora del formulario */
+.form-container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Título */
+h1 {
+  color: #0f172a;
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Bloques que envuelven a cada input, etiqueta y error */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+/* Etiquetas */
+label {
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Entradas de texto */
+input[type="text"] {
+  padding: 12px;
+  font-size: 0.95rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Enfoque normal del input */
+input[type="text"]:focus {
+  border-color: #0284c7;
+}
+
+/* Mensajes de error dinámicos debajo del input */
+.error-mensaje {
+  color: #ef4444; /* Rojo de advertencia */
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 5px;
+  min-height: 16px; /* Mantiene el espacio reservado aunque esté vacío para que no "salte" el diseño */
+}
+
+/* Botón de envío */
+#btn-enviar {
+  width: 100%;
+  background-color: #0284c7;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+#btn-enviar:hover {
+  background-color: #0369a1;
+}
+
+#btn-enviar:active {
+  transform: scale(0.98);
+}
+
+/* Mensaje de éxito general */
+.exito-mensaje {
+  color: #22c55e; /* Verde de éxito */
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+/* Entradas de texto y contraseña */
+input[type="text"],
+input[type="password"] {
+  padding: 12px;
+  font-size: 0.95rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Enfoque de ambos inputs */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #0284c7;
+}

@@ -1,0 +1,75 @@
+/* Centramos la aplicación en la pantalla */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Tarjeta contenedora principal */
+.filtro-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Título */
+h1 {
+  color: #2b2d42;
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input del buscador moderno */
+#buscador {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box; /* Evita que el input se desborde */
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+/* Efecto cuando hacemos foco para escribir */
+#buscador:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+/* Estilo para la lista */
+#lista-destinos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 280px; /* Habilita scroll si hay muchos elementos */
+  overflow-y: auto;
+}
+
+/* Cada ítem de destino (<li>) */
+#lista-destinos li {
+  background-color: #f1f5f9;
+  color: #334155;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Efecto visual cuando pasamos el cursor por un destino */
+#lista-destinos li:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  transform: translateX(4px); /* Un leve desplazamiento hacia la derecha */
+}

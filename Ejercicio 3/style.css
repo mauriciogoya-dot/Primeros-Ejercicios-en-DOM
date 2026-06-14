@@ -1,0 +1,96 @@
+/* Centramos la tarjeta en la pantalla */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef2f3; /* Un fondo gris azulado más suave */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Tarjeta contenedora para el contador */
+.container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Sombra suave y moderna */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Separación interna entre elementos */
+}
+
+/* Estilo para el número del contador */
+#contador {
+  font-size: 4.5rem; /* Número bien grande y protagonista */
+  font-weight: 800;
+  margin: 0;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+
+/* Contenedor exclusivo para los botones (los alinea de forma horizontal) */
+.botones-grupo {
+  display: flex;
+  gap: 12px; /* Espacio entre los botones */
+}
+
+/* Base moderna para todos los botones */
+button {
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  transition:
+    background-color 0.2s,
+    transform 0.1s,
+    box-shadow 0.2s;
+}
+
+/* Colores específicos para identificar la acción de cada botón */
+#btn-sumar {
+  background-color: #28a745; /* Verde */
+}
+#btn-sumar:hover {
+  background-color: #218838;
+}
+
+#btn-restar {
+  background-color: #dc3545; /* Rojo */
+}
+#btn-restar:hover {
+  background-color: #c82333;
+}
+
+#btn-reiniciar {
+  background-color: #6c757d; /* Gris */
+}
+#btn-reiniciar:hover {
+  background-color: #5a6268;
+}
+
+/* Efecto de hundido para todos los botones al hacer clic */
+button:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Clases dinámicas que maneja JavaScript para cambiar el color del número */
+.positivo {
+  color: #28a745;
+  transform: scale(1.05); /* Un mini efecto de aumento cuando es positivo */
+}
+.negativo {
+  color: #dc3545;
+  transform: scale(1.05); /* Un mini efecto de aumento cuando es negativo */
+}
+.neutro {
+  color: #2b2d42; /* Un azul oscuro muy elegante */
+}

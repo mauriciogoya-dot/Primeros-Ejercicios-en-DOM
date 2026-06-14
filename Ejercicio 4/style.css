@@ -1,0 +1,126 @@
+/* Centramos la aplicación en la pantalla y cambiamos el fondo */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5; /* Un gris claro muy limpio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Tarjeta contenedora de la lista de tareas */
+.todo-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px; /* Evita que se estire demasiado en pantallas grandes */
+}
+
+/* Título principal */
+h1 {
+  color: #1a1a1a;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Contenedor para agrupar el input y el botón de agregar arriba */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el campo de texto */
+input[type="text"] {
+  flex: 1; /* Hace que el input ocupe todo el espacio disponible */
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Cambia el borde del input cuando el usuario hace clic para escribir */
+input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+/* Botón "Agregar tarea" */
+#btn-agregar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#btn-agregar:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para la lista <ul> */
+ul {
+  list-style: none; /* Le saca los puntitos negros por defecto */
+  padding: 0;
+  margin: 0;
+  max-height: 300px; /* Si hay muchas tareas, habilita barra de scroll */
+  overflow-y: auto;
+}
+
+/* Cada ítem de la lista (<li>) que creamos con JS */
+li {
+  background-color: #f8f9fa;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between; /* Envía el texto a la izquierda y el botón a la derecha */
+  align-items: center;
+  border-left: 4px solid #007bff; /* Un detalle visual azul al principio de cada tarea */
+  animation: fadeIn 0.3s ease; /* Animación sutil cuando aparece */
+}
+
+/* Botón "Eliminar" que está adentro de cada <li> */
+li button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+li button:hover {
+  background-color: #bd2130;
+}
+
+li button:active {
+  transform: scale(0.95);
+}
+
+/* Animación de aparición para las nuevas tareas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

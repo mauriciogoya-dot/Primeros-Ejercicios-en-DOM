@@ -1,0 +1,114 @@
+/* Centramos el componente en la pantalla */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Tarjeta contenedora de las pestañas */
+.tabs-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 550px;
+}
+
+/* Título */
+h1 {
+  color: #0f172a;
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Fila superior de botones (Pestañas) */
+.botones-tabs {
+  display: flex;
+  border-bottom: 2px solid #e2e8f0; /* Línea sutil divisoria */
+  margin-bottom: 20px;
+  gap: 8px;
+}
+
+/* Estilo base de los botones de pestañas */
+.btn-tab {
+  background: none;
+  border: none;
+  color: #64748b;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+  border-radius: 6px 6px 0 0; /* Bordes redondeados solo arriba */
+}
+
+/* Hover sutil */
+.btn-tab:hover {
+  color: #334155;
+  background-color: #f1f5f9;
+}
+
+/* PESTAÑA ACTIVA: Controlada por tu JavaScript */
+.btn-tab.activo {
+  color: #0284c7; /* Azul destacado */
+  background-color: transparent;
+}
+
+/* Línea azul animada debajo de la pestaña activa */
+.btn-tab.activo::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Se encima justo en la línea gris de fondo */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #0284c7;
+  border-radius: 3px 3px 0 0;
+}
+
+/* --- BLOQUES DE CONTENIDO --- */
+
+/* Por defecto, todas las secciones empiezan completamente ocultas */
+.tab-seccion {
+  display: none;
+  animation: unirseSuave 0.4s ease; /* Efecto visual al aparecer */
+}
+
+.tab-seccion h2 {
+  color: #1e293b;
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.tab-seccion p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* LA CLASE MÁGICA: Activa la sección correspondiente */
+.tab-seccion.visible {
+  display: block;
+}
+
+/* Animación de entrada suave para el texto */
+@keyframes unirseSuave {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,44 @@
+/* Centramos todo en la pantalla y cambiamos la tipografía */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Le damos estilo al título */
+h1 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+/* Un botón moderno con transiciones suaves */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+/* Efecto cuando pasamos el mouse por encima del botón */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Efecto de "hundido" cuando hacemos clic */
+button:active {
+  transform: scale(0.98);
+}

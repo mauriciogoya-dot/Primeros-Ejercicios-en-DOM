@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 10</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="kanban-container">
+      <h1>Tablero Kanban</h1>
+
+      <div class="input-group">
+        <input
+          type="text"
+          id="nueva-tarea"
+          placeholder="Escribe una nueva tarea..."
+        />
+        <button id="btn-agregar-tarea">Agregar tarea</button>
+      </div>
+
+      <div class="tablero">
+        <div class="columna" id="col-pendiente">
+          <h2>Pendiente</h2>
+          <div class="zona-drop" id="zona-pendiente"></div>
+        </div>
+
+        <div class="columna" id="col-proceso">
+          <h2>En proceso</h2>
+          <div class="zona-drop" id="zona-proceso"></div>
+        </div>
+
+        <div class="columna" id="col-finalizado">
+          <h2>Finalizado</h2>
+          <div class="zona-drop" id="zona-finalizado"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

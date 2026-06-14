@@ -1,0 +1,59 @@
+/* Centramos todo en la pantalla y cambiamos la tipografía */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Un botón moderno con transiciones suaves */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+/* Efecto cuando pasamos el mouse por encima del botón */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Efecto de "hundido" cuando hacemos clic */
+button:active {
+  transform: scale(0.98);
+}
+/* Estado inicial de la caja */
+#mi-caja {
+  width: 200px;
+  height: 200px;
+  background-color: #e0e0e0; /* Color claro */
+  color: #333333; /* Texto oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  transition: all 0.4s ease; /* Para que el cambio no sea brusco */
+}
+
+/* La nueva clase que cambia el estilo (se la pondremos con JS) */
+.caja-modificada {
+  background-color: #28a745 !important; /* Cambia el fondo (ej: verde) */
+  color: #ffffff !important; /* Cambia el color de texto a blanco */
+  width: 300px !important; /* Aumenta su tamaño (ancho) */
+  height: 300px !important; /* Aumenta su tamaño (alto) */
+}
